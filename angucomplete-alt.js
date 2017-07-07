@@ -80,6 +80,7 @@
       var unbindInitialValue;
       var displaySearching;
       var displayNoResults;
+      var vsRepeat = elem.find('[vs-repeat]');
 
       elem.on('mousedown', function(event) {
         if (event.target.id) {
@@ -324,7 +325,6 @@
       }
 
       function dropdownRow() {
-        var vsRepeat = elem.find('[vs-repeat]');
         var startIndex = vsRepeat.length > 0 ? vsRepeat.scope().startIndex :0;
         return elem[0].querySelectorAll('.angucomplete-row')[scope.currentIndex - startIndex];
       }
