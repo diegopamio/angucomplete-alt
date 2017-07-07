@@ -324,7 +324,9 @@
       }
 
       function dropdownRow() {
-        return elem[0].querySelectorAll('.angucomplete-row')[scope.currentIndex];
+        var vsRepeat = elem.find('[vs-repeat]');
+        var startIndex = vsRepeat.length > 0 ? vsRepeat.scope().startIndex :0;
+        return elem[0].querySelectorAll('.angucomplete-row')[scope.currentIndex - startIndex];
       }
 
       function dropdownRowTop() {
